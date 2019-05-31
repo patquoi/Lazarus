@@ -1,0 +1,50 @@
+object FormSolutions: TFormSolutions
+  Left = 65
+  Height = 411
+  Top = 27
+  Width = 398
+  Caption = 'Plusieurs solutions possibles'
+  ClientHeight = 411
+  ClientWidth = 398
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnHide = FormHide
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  LCLVersion = '1.6.2.0'
+  object LabelPresentation: TLabel
+    Left = 0
+    Height = 1
+    Top = 0
+    Width = 398
+    Align = alTop
+    Alignment = taCenter
+    Layout = tlCenter
+    ParentColor = False
+  end
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 22
+    Top = 389
+    Width = 398
+    Panels = <>
+  end
+  object ListBox: TListBox
+    Left = 0
+    Height = 388
+    Top = 1
+    Width = 398
+    Align = alClient
+    ItemHeight = 0
+    OnClick = ListBoxClick
+    OnDblClick = ListBoxDblClick
+    ScrollWidth = 396
+    TabOrder = 1
+    TopIndex = -1
+  end
+end

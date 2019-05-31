@@ -1,0 +1,40 @@
+object FormPatience: TFormPatience
+  Left = 75
+  Height = 40
+  Top = 34
+  Width = 640
+  BorderStyle = bsNone
+  Caption = 'Duplicata - Veuillez patienter...'
+  ClientHeight = 40
+  ClientWidth = 640
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.2.0'
+  object ProgressBar: TProgressBar
+    Left = 0
+    Height = 22
+    Top = 18
+    Width = 640
+    Align = alBottom
+    Smooth = True
+    TabOrder = 0
+    BarShowText = True
+  end
+  object Panel: TPanel
+    Left = 0
+    Height = 18
+    Top = 0
+    Width = 640
+    Align = alClient
+    Color = clBlack
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+  end
+end

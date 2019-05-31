@@ -1,0 +1,355 @@
+object FormSaisieTirage: TFormSaisieTirage
+  Left = 65
+  Height = 217
+  Top = 27
+  Width = 245
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Proposition de tirage'
+  ClientHeight = 217
+  ClientWidth = 245
+  Color = clBlack
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  KeyPreview = True
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnHide = FormHide
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '1.6.2.0'
+  object LabelReliquat: TLabel
+    Left = 0
+    Height = 31
+    Top = 0
+    Width = 122
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'ABCDEFG'
+    Color = clGray
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clSilver
+    Font.Height = -27
+    Font.Name = 'Courier New'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object LabelNouveauTirage: TLabel
+    Left = 122
+    Height = 31
+    Top = 0
+    Width = 123
+    AutoSize = False
+    Caption = 'STUVWYZ'
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Courier New'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object LabelInformation: TLabel
+    Left = 16
+    Height = 25
+    Top = 176
+    Width = 209
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Utilisez la touche Retour Arrière pour effacer le dernier jeton.'
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object Button1: TButton
+    Tag = 2
+    Left = 16
+    Height = 25
+    Top = 48
+    Width = 25
+    Caption = '&A'
+    OnClick = ButtonJetonClick
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Tag = 3
+    Left = 47
+    Height = 25
+    Top = 48
+    Width = 25
+    Caption = '&B'
+    OnClick = ButtonJetonClick
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Tag = 4
+    Left = 78
+    Height = 25
+    Top = 48
+    Width = 25
+    Caption = '&C'
+    OnClick = ButtonJetonClick
+    TabOrder = 2
+  end
+  object Button4: TButton
+    Tag = 5
+    Left = 109
+    Height = 25
+    Top = 48
+    Width = 25
+    Caption = '&D'
+    OnClick = ButtonJetonClick
+    TabOrder = 3
+  end
+  object Button5: TButton
+    Tag = 6
+    Left = 140
+    Height = 25
+    Top = 48
+    Width = 25
+    Caption = '&E'
+    OnClick = ButtonJetonClick
+    TabOrder = 4
+  end
+  object Button6: TButton
+    Tag = 7
+    Left = 171
+    Height = 25
+    Top = 48
+    Width = 25
+    Caption = '&F'
+    OnClick = ButtonJetonClick
+    TabOrder = 5
+  end
+  object Button7: TButton
+    Tag = 8
+    Left = 202
+    Height = 25
+    Top = 48
+    Width = 25
+    Caption = '&G'
+    OnClick = ButtonJetonClick
+    TabOrder = 6
+  end
+  object Button8: TButton
+    Tag = 9
+    Left = 16
+    Height = 25
+    Top = 79
+    Width = 25
+    Caption = '&H'
+    OnClick = ButtonJetonClick
+    TabOrder = 7
+  end
+  object Button9: TButton
+    Tag = 10
+    Left = 47
+    Height = 25
+    Top = 79
+    Width = 25
+    Caption = '&I'
+    OnClick = ButtonJetonClick
+    TabOrder = 8
+  end
+  object Button10: TButton
+    Tag = 11
+    Left = 78
+    Height = 25
+    Top = 79
+    Width = 25
+    Caption = '&J'
+    OnClick = ButtonJetonClick
+    TabOrder = 9
+  end
+  object Button11: TButton
+    Tag = 12
+    Left = 109
+    Height = 25
+    Top = 79
+    Width = 25
+    Caption = '&K'
+    OnClick = ButtonJetonClick
+    TabOrder = 10
+  end
+  object Button12: TButton
+    Tag = 13
+    Left = 140
+    Height = 25
+    Top = 79
+    Width = 25
+    Caption = '&L'
+    OnClick = ButtonJetonClick
+    TabOrder = 11
+  end
+  object Button13: TButton
+    Tag = 14
+    Left = 171
+    Height = 25
+    Top = 79
+    Width = 25
+    Caption = '&M'
+    OnClick = ButtonJetonClick
+    TabOrder = 12
+  end
+  object Button14: TButton
+    Tag = 15
+    Left = 202
+    Height = 25
+    Top = 79
+    Width = 25
+    Caption = '&N'
+    OnClick = ButtonJetonClick
+    TabOrder = 13
+  end
+  object Button15: TButton
+    Tag = 16
+    Left = 16
+    Height = 25
+    Top = 110
+    Width = 25
+    Caption = '&O'
+    OnClick = ButtonJetonClick
+    TabOrder = 14
+  end
+  object Button16: TButton
+    Tag = 17
+    Left = 47
+    Height = 25
+    Top = 110
+    Width = 25
+    Caption = '&P'
+    OnClick = ButtonJetonClick
+    TabOrder = 15
+  end
+  object Button17: TButton
+    Tag = 18
+    Left = 78
+    Height = 25
+    Top = 110
+    Width = 25
+    Caption = '&Q'
+    OnClick = ButtonJetonClick
+    TabOrder = 16
+  end
+  object Button18: TButton
+    Tag = 19
+    Left = 109
+    Height = 25
+    Top = 110
+    Width = 25
+    Caption = '&R'
+    OnClick = ButtonJetonClick
+    TabOrder = 17
+  end
+  object Button19: TButton
+    Tag = 20
+    Left = 140
+    Height = 25
+    Top = 110
+    Width = 25
+    Caption = '&S'
+    OnClick = ButtonJetonClick
+    TabOrder = 18
+  end
+  object Button20: TButton
+    Tag = 21
+    Left = 171
+    Height = 25
+    Top = 110
+    Width = 25
+    Caption = '&T'
+    OnClick = ButtonJetonClick
+    TabOrder = 19
+  end
+  object Button21: TButton
+    Tag = 22
+    Left = 202
+    Height = 25
+    Top = 110
+    Width = 25
+    Caption = '&U'
+    OnClick = ButtonJetonClick
+    TabOrder = 20
+  end
+  object Button22: TButton
+    Tag = 23
+    Left = 16
+    Height = 25
+    Top = 141
+    Width = 25
+    Caption = '&V'
+    OnClick = ButtonJetonClick
+    TabOrder = 21
+  end
+  object Button23: TButton
+    Tag = 24
+    Left = 47
+    Height = 25
+    Top = 141
+    Width = 25
+    Caption = '&W'
+    OnClick = ButtonJetonClick
+    TabOrder = 22
+  end
+  object Button24: TButton
+    Tag = 25
+    Left = 78
+    Height = 25
+    Top = 141
+    Width = 25
+    Caption = '&X'
+    OnClick = ButtonJetonClick
+    TabOrder = 23
+  end
+  object Button25: TButton
+    Tag = 26
+    Left = 109
+    Height = 25
+    Top = 141
+    Width = 25
+    Caption = '&Y'
+    OnClick = ButtonJetonClick
+    TabOrder = 24
+  end
+  object Button26: TButton
+    Tag = 27
+    Left = 140
+    Height = 25
+    Top = 141
+    Width = 25
+    Caption = '&Z'
+    OnClick = ButtonJetonClick
+    TabOrder = 25
+  end
+  object Button0: TButton
+    Tag = 1
+    Left = 171
+    Height = 25
+    Top = 141
+    Width = 25
+    Caption = '&?'
+    OnClick = ButtonJetonClick
+    TabOrder = 26
+  end
+  object ButtonOK: TButton
+    Left = 202
+    Height = 25
+    Top = 141
+    Width = 25
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    OnClick = ButtonOKClick
+    TabOrder = 27
+  end
+end

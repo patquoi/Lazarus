@@ -1,0 +1,48 @@
+object FormFeuilleMatch: TFormFeuilleMatch
+  Left = 605
+  Height = 466
+  Top = 176
+  Width = 580
+  Caption = 'Feuille de match'
+  ClientHeight = 466
+  ClientWidth = 580
+  Color = clBlack
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWhite
+  Font.Height = -11
+  Font.Name = 'Courier New'
+  OnCreate = FormCreate
+  OnHide = FormHide
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  LCLVersion = '1.6.2.0'
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 22
+    Top = 444
+    Width = 580
+    Color = clBlack
+    Panels = <>
+    ParentColor = False
+    SizeGrip = False
+  end
+  object RichMemo: TRichMemo
+    Left = 0
+    Height = 444
+    Top = 0
+    Width = 580
+    Align = alClient
+    BorderStyle = bsNone
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    HideSelection = False
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 1
+    WordWrap = False
+    ZoomFactor = 1
+  end
+end

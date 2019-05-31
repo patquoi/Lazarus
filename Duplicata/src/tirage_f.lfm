@@ -1,0 +1,23 @@
+object FormTirage: TFormTirage
+  Left = 460
+  Height = 53
+  Top = 27
+  Width = 512
+  BorderStyle = bsSizeToolWin
+  Caption = 'Tirage'
+  Color = clBlack
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnHide = FormHide
+  OnKeyDown = FormKeyDown
+  OnKeyPress = FormKeyPress
+  OnMouseDown = FormMouseDown
+  OnMouseUp = FormMouseUp
+  OnPaint = FormPaint
+  OnResize = FormResize
+  OnShow = FormShow
+  LCLVersion = '1.6.2.0'
+end

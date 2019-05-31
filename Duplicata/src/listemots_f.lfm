@@ -1,0 +1,456 @@
+object FormListeMots: TFormListeMots
+  Left = 65
+  Height = 590
+  Top = 27
+  Width = 673
+  BorderIcons = []
+  BorderStyle = bsDialog
+  Caption = 'Génération de liste de mots à lettres chères'
+  ClientHeight = 590
+  ClientWidth = 673
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Position = poScreenCenter
+  LCLVersion = '1.6.2.0'
+  object Label1: TLabel
+    Left = 8
+    Height = 13
+    Top = 16
+    Width = 162
+    Caption = 'Générer la liste des mots &de'
+    FocusControl = ComboBoxNbLettresMin
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 224
+    Height = 13
+    Top = 16
+    Width = 7
+    Caption = '&à'
+    FocusControl = ComboBoxNbLettresMax
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 288
+    Height = 13
+    Top = 16
+    Width = 117
+    Caption = 'lettres comportant...'
+    ParentColor = False
+  end
+  object LabelResume: TLabel
+    Left = 412
+    Height = 25
+    Top = 10
+    Width = 168
+    AutoSize = False
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object Bevel1: TBevel
+    Left = 8
+    Height = 5
+    Top = 49
+    Width = 644
+  end
+  object Bevel2: TBevel
+    Left = 8
+    Height = 2
+    Top = 369
+    Width = 645
+  end
+  object Bevel3: TBevel
+    Left = 9
+    Height = 2
+    Top = 523
+    Width = 645
+  end
+  object ComboBoxNbLettresMin: TComboBox
+    Left = 176
+    Height = 32
+    Top = 10
+    Width = 41
+    ItemHeight = 0
+    ItemIndex = 0
+    Items.Strings = (
+      '2'
+      '3'
+      '4'
+      '5'
+      '6'
+      '7'
+      '8'
+      '9'
+      '10'
+      '11'
+      '12'
+      '13'
+      '14'
+      '15'
+    )
+    OnChange = ComboBoxNbLettresMinChange
+    Style = csDropDownList
+    TabOrder = 0
+    Text = '2'
+  end
+  object ComboBoxNbLettresMax: TComboBox
+    Left = 240
+    Height = 32
+    Top = 10
+    Width = 42
+    ItemHeight = 0
+    ItemIndex = 13
+    Items.Strings = (
+      '2'
+      '3'
+      '4'
+      '5'
+      '6'
+      '7'
+      '8'
+      '9'
+      '10'
+      '11'
+      '12'
+      '13'
+      '14'
+      '15'
+    )
+    Style = csDropDownList
+    TabOrder = 1
+    Text = '15'
+  end
+  object RadioButton1: TRadioButton
+    Tag = 1
+    Left = 9
+    Height = 23
+    Top = 80
+    Width = 190
+    Caption = 'Un nombre exact de &lettres :'
+    OnClick = RadioButtonClick
+    TabOrder = 3
+  end
+  object RadioGroupJ: TRadioGroup
+    Left = 9
+    Height = 81
+    Top = 105
+    Width = 217
+    AutoFill = True
+    Caption = ' J '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 67
+    ClientWidth = 215
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      'Aucun J'
+      'Un seul J'
+      'Deux J (nécessitant 1 joker)'
+    )
+    OnClick = RadioGroupClick
+    TabOrder = 4
+  end
+  object RadioGroupK: TRadioGroup
+    Left = 233
+    Height = 105
+    Top = 105
+    Width = 209
+    AutoFill = True
+    Caption = ' K '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 91
+    ClientWidth = 207
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      'Aucun K'
+      'Un seul K'
+      'Deux K (nécessitant 1 joker)'
+      'Trois K (nécessitant 2 jokers)'
+    )
+    OnClick = RadioGroupClick
+    TabOrder = 5
+  end
+  object RadioGroupW: TRadioGroup
+    Left = 449
+    Height = 81
+    Top = 105
+    Width = 205
+    AutoFill = True
+    Caption = ' W '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 67
+    ClientWidth = 203
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      'Aucun W'
+      'Un seul W'
+      'Deux W (nécessitant 1 joker)'
+    )
+    OnClick = RadioGroupClick
+    TabOrder = 6
+  end
+  object RadioGroupQ: TRadioGroup
+    Left = 9
+    Height = 81
+    Top = 192
+    Width = 216
+    AutoFill = True
+    Caption = ' Q '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 67
+    ClientWidth = 214
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      'Aucun Q'
+      'Un seul Q'
+      'Deux Q (nécessitant 1 joker)'
+    )
+    OnClick = RadioGroupClick
+    TabOrder = 7
+  end
+  object RadioGroupZ: TRadioGroup
+    Left = 233
+    Height = 105
+    Top = 217
+    Width = 209
+    AutoFill = True
+    Caption = ' Z '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 91
+    ClientWidth = 207
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      'Aucun Z'
+      'Un seul Z'
+      'Deux Z (nécessitant 1 joker)'
+      'Trois Z (nécessitant 2 jokers)'
+    )
+    OnClick = RadioGroupClick
+    TabOrder = 8
+  end
+  object RadioGroupX: TRadioGroup
+    Left = 449
+    Height = 81
+    Top = 193
+    Width = 205
+    AutoFill = True
+    Caption = ' X '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 67
+    ClientWidth = 203
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      'Aucun X'
+      'Un seul X'
+      'Deux X (nécessitant 1 joker)'
+    )
+    OnClick = RadioGroupClick
+    TabOrder = 9
+  end
+  object RadioGroupY: TRadioGroup
+    Left = 448
+    Height = 81
+    Top = 281
+    Width = 206
+    AutoFill = True
+    Caption = ' Y '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 67
+    ClientWidth = 204
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      'Aucun Y'
+      'Un seul Y'
+      'Deux Y (nécessitant 1 joker)'
+    )
+    OnClick = RadioGroupClick
+    TabOrder = 10
+  end
+  object RadioButton2: TRadioButton
+    Tag = 2
+    Left = 9
+    Height = 23
+    Top = 384
+    Width = 196
+    Caption = 'Un nombre exact de &valeurs :'
+    OnClick = RadioButtonClick
+    TabOrder = 11
+    TabStop = True
+  end
+  object RadioGroup8: TRadioGroup
+    Left = 209
+    Height = 105
+    Top = 384
+    Width = 192
+    AutoFill = True
+    Caption = ' Lettres à 8 points (J, Q) '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 91
+    ClientWidth = 190
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      'Aucune lettre à 8 points'
+      'Une seule lettre à 8 points'
+      'Deux lettres à 8 points'
+      'Trois lettres à 8 points'
+    )
+    OnClick = RadioGroupClick
+    TabOrder = 12
+  end
+  object RadioGroup10: TRadioGroup
+    Left = 438
+    Height = 130
+    Top = 384
+    Width = 216
+    AutoFill = True
+    Caption = ' Lettres à 10 points (K, W, X, Y, Z) '
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 116
+    ClientWidth = 214
+    Enabled = False
+    ItemIndex = 0
+    Items.Strings = (
+      'Aucune lettre à 10 points'
+      'Une seule lettre à 10 points'
+      'Deux lettres à 10 points'
+      'Trois lettres à 10 points'
+      'Quatre lettres à 10 points'
+    )
+    OnClick = RadioGroupClick
+    TabOrder = 13
+  end
+  object ButtonReinitialiser: TButton
+    Left = 8
+    Height = 25
+    Top = 545
+    Width = 97
+    Caption = '&Réinitialiser'
+    OnClick = ButtonReinitialiserClick
+    TabOrder = 14
+  end
+  object ButtonGenerer: TButton
+    Left = 121
+    Height = 25
+    Top = 545
+    Width = 89
+    Caption = '&Générer'
+    Default = True
+    OnClick = ButtonGenererClick
+    TabOrder = 15
+  end
+  object ButtonAnnuler: TButton
+    Left = 225
+    Height = 25
+    Top = 545
+    Width = 75
+    Cancel = True
+    Caption = 'Annuler'
+    ModalResult = 1
+    TabOrder = 16
+  end
+  object GroupBoxRq: TGroupBox
+    Left = 309
+    Height = 49
+    Top = 529
+    Width = 345
+    Caption = ' Remarque '
+    ClientHeight = 35
+    ClientWidth = 343
+    TabOrder = 17
+    object Label4: TLabel
+      Left = 9
+      Height = 26
+      Top = 4
+      Width = 326
+      AutoSize = False
+      Caption = 'La liste de mots est générée dans un fichier texte nommé "listemots.txt" dans le dossier de Duplicata.'
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+  end
+  object RadioButton0: TRadioButton
+    Left = 9
+    Height = 24
+    Top = 56
+    Width = 153
+    Caption = 'Aucune lettre chère'
+    Checked = True
+    OnChange = RadioButton0Change
+    OnClick = RadioButtonClick
+    TabOrder = 2
+    TabStop = True
+  end
+end

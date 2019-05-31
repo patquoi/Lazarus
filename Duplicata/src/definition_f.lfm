@@ -1,0 +1,89 @@
+object FormDefinitionMot: TFormDefinitionMot
+  Left = 65
+  Height = 123
+  Top = 27
+  Width = 393
+  BorderStyle = bsDialog
+  Caption = 'Recherche de la définition d''un mot'
+  ClientHeight = 123
+  ClientWidth = 393
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '1.6.2.0'
+  object LabelSource: TLabel
+    Left = 16
+    Height = 13
+    Top = 16
+    Width = 47
+    Caption = '&Source :'
+    FocusControl = ComboBoxSource
+    ParentColor = False
+  end
+  object LabelMot: TLabel
+    Left = 16
+    Height = 13
+    Top = 56
+    Width = 28
+    Caption = '&Mot :'
+    FocusControl = EditMot
+    ParentColor = False
+  end
+  object ComboBoxSource: TComboBox
+    Left = 64
+    Height = 36
+    Top = 10
+    Width = 313
+    ItemHeight = 0
+    Style = csDropDownList
+    TabOrder = 0
+  end
+  object EditMot: TEdit
+    Left = 64
+    Height = 40
+    Top = 48
+    Width = 313
+    CharCase = ecLowerCase
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Courier New'
+    Font.Style = [fsBold]
+    MaxLength = 15
+    ParentFont = False
+    TabOrder = 1
+  end
+  object ButtonRechercher: TButton
+    Left = 32
+    Height = 25
+    Top = 88
+    Width = 87
+    Caption = '&Rechercher'
+    Default = True
+    OnClick = ButtonRechercherClick
+    TabOrder = 2
+  end
+  object ButtonPersonnaliser: TButton
+    Left = 152
+    Height = 25
+    Top = 88
+    Width = 105
+    Caption = '&Personnaliser'
+    OnClick = ButtonPersonnaliserClick
+    TabOrder = 3
+  end
+  object ButtonAnnuler: TButton
+    Left = 288
+    Height = 25
+    Top = 88
+    Width = 75
+    Cancel = True
+    Caption = 'Annuler'
+    ModalResult = 1
+    TabOrder = 4
+  end
+end

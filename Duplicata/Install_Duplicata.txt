@@ -1,0 +1,17 @@
+Installation de Duplicata sous Linux
+====================================
+
+1. Décompresser l'archive contenant ce fichier dans un dossier
+2. Installer Lazarus (version 1.6 minimum) en lançant la commande suivante dans un shell :
+     $ sudo apt install fpc lazarus
+3. Lancer Lazarus
+4. Ouvrir, compiler puis installer le paquet situé dans Download/richmemo/richmemopackage.lpk :
+   - Menu : Paquet > Ouvrir un paquet 
+5. Ouvrir le projet Duplicata situé dans Duplicata/Src/Duplicata.lpr
+   - Menu : Projet > Ouvrir un projet 
+6. Créer puis exécuter :
+   - Menu : Exécuter > Créer
+   - L'exécutable généré est Duplicata/bin/Duplicata
+7. Se référer à l'aide en ligne ici (Captures Windows) : Duplicata/Bin/html/index.html
+
+Dernière mise à jour le 30 novembre 2018.

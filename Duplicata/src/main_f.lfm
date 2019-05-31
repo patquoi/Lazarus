@@ -1,0 +1,921 @@
+object FormMain: TFormMain
+  Left = 603
+  Height = 857
+  Top = 178
+  Width = 600
+  Caption = 'Duplicata'
+  ClientHeight = 829
+  ClientWidth = 600
+  Color = clBlack
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Arial'
+  KeyPreview = True
+  Menu = MainMenu
+  OnClose = FormClose
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyPress = FormKeyPress
+  OnMouseDown = FormMouseDown
+  OnMouseMove = FormMouseMove
+  OnPaint = FormPaint
+  OnResize = FormResize
+  OnShow = FormShow
+  LCLVersion = '1.6.2.0'
+  object StatusBar: TStatusBar
+    Left = 0
+    Height = 22
+    Top = 807
+    Width = 600
+    AutoHint = True
+    Color = clWhite
+    Panels = <    
+      item
+        Width = 427
+      end    
+      item
+        Alignment = taCenter
+        Style = psOwnerDraw
+        Text = 'Temps'
+        Width = 50
+      end    
+      item
+        Alignment = taCenter
+        Width = 50
+      end>
+    ParentColor = False
+    SimplePanel = False
+    SizeGrip = False
+    OnDrawPanel = StatusBarDrawPanel
+  end
+  object MainMenu: TMainMenu
+    left = 48
+    top = 8
+    object MenuItemPartie: TMenuItem
+      Caption = '&Partie'
+      object MenuItemPartieNouvelle: TMenuItem
+        Action = ActionPartieNouvelle
+      end
+      object MenuItemPartieDemonstration: TMenuItem
+        Action = ActionPartieDemonstration
+      end
+      object MenuItemSeparateur5: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemPartieOuvrir: TMenuItem
+        Action = ActionPartieOuvrir
+      end
+      object MenuItemPartieEnregistrer: TMenuItem
+        Action = ActionPartieEnregistrer
+      end
+      object MenuItemPartieEnregistrerSous: TMenuItem
+        Action = ActionPartieEnregistrerSous
+      end
+      object MenuItemSeparateur6: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemPartieQuitter: TMenuItem
+        Action = ActionPartieQuitter
+      end
+    end
+    object MenuItemOptions: TMenuItem
+      Caption = '&Options'
+      object MenuItemOptionsJournalRecherche: TMenuItem
+        Action = ActionOptionsJournalRecherche
+        AutoCheck = True
+      end
+      object MenuItemOptionsGenererAutoFDM: TMenuItem
+        Action = ActionOptionsGenererAutoFDM
+        AutoCheck = True
+      end
+      object MenuItemOptionsListeToutesSolutions: TMenuItem
+        Action = ActionOptionsListeToutesSolutions
+        AutoCheck = True
+      end
+      object MenuItemOptionsEnregistrerPartieAuto: TMenuItem
+        Action = ActionOptionsEnregistrerPartieAuto
+        AutoCheck = True
+      end
+      object MenuItemOptionsQualitePose: TMenuItem
+        Action = ActionOptionsQualitePose
+      end
+      object MenuItemSeparateur3: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemOptionsTypePartie: TMenuItem
+        Caption = 'Type de partie'
+        object MenuItemOptionsTypePartieBlitz: TMenuItem
+          Action = ActionOptionsTypePartieBlitz
+          GroupIndex = 2
+        end
+        object MenuItemOptionsTypePartieSemiRapide: TMenuItem
+          Action = ActionOptionsTypePartieSemiRapide
+          GroupIndex = 2
+        end
+        object MenuItemOptionsTypePartieNormale: TMenuItem
+          Action = ActionOptionsTypePartieNormale
+          GroupIndex = 2
+        end
+        object MenuItemSeparateur7: TMenuItem
+          Caption = '-'
+          GroupIndex = 2
+        end
+        object MenuItemOptionsTypePartieStandard: TMenuItem
+          Action = ActionOptionsTypePartieStandard
+          GroupIndex = 4
+        end
+        object MenuItemOptionsTypePartieJoker: TMenuItem
+          Action = ActionOptionsTypePartieJoker
+          GroupIndex = 4
+        end
+      end
+      object MenuItemOptionsTempsLimite: TMenuItem
+        Action = ActionOptionsTempsLimite
+        AutoCheck = True
+      end
+      object MenuItemOptionsSanctions: TMenuItem
+        Action = ActionOptionsSanctions
+        AutoCheck = True
+      end
+      object MenuItemSeparateur4: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemOptionsEnregistrer: TMenuItem
+        Action = ActionOptionsEnregistrer
+      end
+      object MenuItemOptionsAppliquer: TMenuItem
+        Action = ActionOptionsAppliquer
+      end
+      object MenuItemOptionsReinitialiser: TMenuItem
+        Action = ActionOptionsReinitialiser
+      end
+      object MenuItemOptionsEnregistrerEnQuittant: TMenuItem
+        Action = ActionOptionsEnregistrerEnQuittant
+        AutoCheck = True
+      end
+      object MenuItemSeparateur9: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemOptionsViderListePartiesJouees: TMenuItem
+        Action = ActionOptionsViderListePartiesJouees
+      end
+      object MenuItemOptionsReinitialiserRecords: TMenuItem
+        Action = ActionOptionsReinitialiserRecords
+      end
+    end
+    object MenuItemActions: TMenuItem
+      Caption = '&Actions'
+      object MenuItemActionsPasserSonTour: TMenuItem
+        Action = ActionActionsPasserSonTour
+      end
+      object MenuItemActionsChangerTirage: TMenuItem
+        Action = ActionActionsChangerTirage
+      end
+      object MenuItemActionsProposerTirage: TMenuItem
+        Action = ActionActionsProposerTirage
+      end
+      object MenuItemSeparateur8: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemActionsRechercherMots: TMenuItem
+        Action = ActionActionsRechercherMots
+      end
+      object MenuItemActionsListerMotsLettresCheres: TMenuItem
+        Action = ActionActionsListerMotsLettresCheres
+      end
+      object MenuItemActionsRechercherDefinitionMot: TMenuItem
+        Action = ActionActionsRechercherDefinitionMot
+      end
+    end
+    object MenuItemAffichage: TMenuItem
+      Caption = 'A&ffichage'
+      object MenuItemAffichageTirage: TMenuItem
+        Action = ActionAffichageTirage
+        AutoCheck = True
+      end
+      object MenuItemAffichageFeuilleMatch: TMenuItem
+        Action = ActionAffichageFeuilleMatch
+        AutoCheck = True
+      end
+      object MenuItemAffichageGrapheEvolution: TMenuItem
+        Action = ActionAffichageGrapheEvolution
+        AutoCheck = True
+      end
+      object MenuItemAffichageSituationJetons: TMenuItem
+        Action = ActionAffichageSituationJetons
+      end
+      object MenuItemAffichageNouveauxRecords: TMenuItem
+        Action = ActionAffichageNouveauxRecords
+        AutoCheck = True
+      end
+      object MenuITemSeparateur1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemAffichageFeuilleMatchDetaillee: TMenuItem
+        Action = ActionAffichageFeuilleMatchDetaillee
+      end
+      object MenuItemAffichageRecords: TMenuItem
+        Action = ActionAffichageRecords
+      end
+      object MenuItemAffichagePartiesJouees: TMenuItem
+        Action = ActionAffichagePartiesJouees
+      end
+      object MenuItemAffichageListeDefisReleves: TMenuItem
+        Caption = 'Liste des défis relevés (HTML)'
+        object MenuItemAffichageListeDefisReleves1M15L: TMenuItem
+          Action = ActionAffichageListeDefisReleves1M15L
+        end
+      end
+      object MenuITemSeparateur2: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemAffichageRapportsPourcentage: TMenuItem
+        Action = ActionAffichageRapportsPourcentage
+        AutoCheck = True
+        GroupIndex = 1
+      end
+      object MenuItemAffichageRapportsNoteSur20: TMenuItem
+        Action = ActionAffichageRapportsNoteSur20
+        AutoCheck = True
+        GroupIndex = 1
+      end
+    end
+    object MenuItemInfos: TMenuItem
+      Caption = '&?'
+      object MenuItemInfosAide: TMenuItem
+        Action = ActionInfosAide
+      end
+      object MenuItemInfosAPropos: TMenuItem
+        Action = ActionInfosAPropos
+      end
+      object MenuItemInfosInternes: TMenuItem
+        Action = ActionInfosInternes
+      end
+    end
+  end
+  object ActionList: TActionList
+    Images = ImageListActions
+    left = 16
+    top = 8
+    object ActionActionsChangerTirage: TAction
+      Category = 'Actions'
+      Caption = 'C&hanger le tirage'
+      Hint = 'Permet de changer le tirage quand il ne permet pas de jouer ou d''ouvrir le jeu'
+      OnExecute = ActionActionsChangerTirageExecute
+      ShortCut = 16456
+    end
+    object ActionActionsPasserSonTour: TAction
+      Category = 'Actions'
+      Caption = '&Passer son tour'
+      Hint = 'Permet de passer son tour quand on n''a pas assez de proposition'
+      OnExecute = ActionActionsPasserSonTourExecute
+      ShortCut = 16464
+    end
+    object ActionActionsProposerTirage: TAction
+      Category = 'Actions'
+      Caption = 'P&roposer un tirage'
+      Hint = 'Proposer le tirage à venir'
+      OnExecute = ActionActionsProposerTirageExecute
+      ShortCut = 16466
+    end
+    object ActionActionsRechercherMots: TAction
+      Category = 'Actions'
+      Caption = 'Rechercher des &mots...'
+      Hint = 'Permet de rechercher des mots correspondant à un tirage ou un filtre'
+      OnExecute = ActionActionsRechercherMotsExecute
+      ShortCut = 16461
+    end
+    object ActionActionsListerMotsLettresCheres: TAction
+      Category = 'Actions'
+      Caption = 'Lister les mots à lettre chère...'
+      Hint = 'Permet de générer une liste de mots à lettres chères'
+      OnExecute = ActionActionsListerMotsLettresCheresExecute
+      ShortCut = 24652
+    end
+    object ActionActionsRechercherDefinitionMot: TAction
+      Category = 'Actions'
+      Caption = 'Rechercher la définition d''un mot...'
+      Hint = 'Rechercher sur internet la définition d''un mot'
+      OnExecute = ActionActionsRechercherDefinitionMotExecute
+      ShortCut = 24644
+    end
+    object ActionAffichageFeuilleMatch: TAction
+      Category = 'Affichage'
+      AutoCheck = True
+      Caption = '&Feuille de match'
+      Hint = 'Affiche/Cache la feuille de match située à droite et sous le chevalet'
+      OnExecute = ActionAffichageFeuilleMatchExecute
+      ShortCut = 16454
+    end
+    object ActionAffichageTirage: TAction
+      Category = 'Affichage'
+      AutoCheck = True
+      Caption = '&Tirage'
+      Hint = 'Affiche/cache le chevalet situé en haut à droite du plateau de jeu'
+      OnExecute = ActionAffichageTirageExecute
+      ShortCut = 16468
+    end
+    object ActionAffichageGrapheEvolution: TAction
+      Category = 'Affichage'
+      AutoCheck = True
+      Caption = '&Graphe d''évolution'
+      Hint = 'Affiche/Cache le graphe d''évolution'
+      OnExecute = ActionAffichageGrapheEvolutionExecute
+      ShortCut = 16455
+    end
+    object ActionAffichageFeuilleMatchDetaillee: TAction
+      Category = 'Affichage'
+      Caption = 'Feuille de match &Détaillée (HTML)'
+      Hint = 'Génère et affiche la feuille de match détaillée (HTML)'
+      OnExecute = ActionAffichageFeuilleMatchDetailleeExecute
+      ShortCut = 16452
+    end
+    object ActionAffichageRapportsPourcentage: TAction
+      Category = 'Affichage'
+      AutoCheck = True
+      Caption = 'Rapports sous forme de %'
+      GroupIndex = 1
+      Hint = 'Affiche les rapports de stats sous forme de pourcentages'
+      OnExecute = ActionOptionsRapportsExecute
+    end
+    object ActionAffichageRapportsNoteSur20: TAction
+      Tag = 1
+      Category = 'Affichage'
+      AutoCheck = True
+      Caption = 'Rapports sous forme de note (/20)'
+      GroupIndex = 1
+      Hint = 'Affiche les rapports de stats sous forme de notes sur 20'
+      OnExecute = ActionOptionsRapportsExecute
+    end
+    object ActionAffichageSituationJetons: TAction
+      Category = 'Affichage'
+      Caption = 'S&ituation des jetons'
+      Hint = 'Affiche l''ordre du tirage et combien il reste de jetons'
+      OnExecute = ActionAffichageSituationJetonsExecute
+      ShortCut = 16457
+    end
+    object ActionAffichagePartiesJouees: TAction
+      Category = 'Affichage'
+      Caption = 'Parties jouées (HTML)'
+      Hint = 'Affiche les infos sur les parties joées terminées'
+      OnExecute = ActionAffichagePartiesJoueesExecute
+      ShortCut = 16469
+    end
+    object ActionAffichageRecords: TAction
+      Category = 'Affichage'
+      Caption = 'Re&cords (HTML)'
+      Hint = 'Affiche tous les records'
+      OnExecute = ActionAffichageRecordsExecute
+      ShortCut = 16451
+    end
+    object ActionAffichageNouveauxRecords: TAction
+      Category = 'Affichage'
+      AutoCheck = True
+      Caption = 'Nouveau&x records'
+      Checked = True
+      Hint = 'Affiche ou non en temps réel les records battus'
+      OnExecute = ActionVideExecute
+      ShortCut = 16472
+    end
+    object ActionAffichageListeDefisReleves1M15L: TAction
+      Category = 'Affichage'
+      Caption = 'Défi n°1 : Formation d''un mot de 15 lettres avec le moins de jetons possible'
+      Hint = 'Affiche la liste des défis relevés'
+      OnExecute = ActionAffichageListeDefisReleves1M15LExecute
+    end
+    object ActionInfosAPropos: TAction
+      Category = 'Infos'
+      Caption = 'À &propos...'
+      Hint = 'Affiche les informations de version et de licence'
+      OnExecute = ActionInfosAProposExecute
+      ShortCut = 24688
+    end
+    object ActionInfosAide: TAction
+      Category = 'Infos'
+      Caption = '&Aide'
+      Hint = 'Aide HTML sur l''utilisation de Duplicata'
+      OnExecute = ActionInfosAideExecute
+      ShortCut = 112
+    end
+    object ActionInfosInternes: TAction
+      Category = 'Infos'
+      Caption = '&Informations internes'
+      OnExecute = ActionInfosInternesExecute
+      ShortCut = 8304
+    end
+    object ActionOptionsListeToutesSolutions: TAction
+      Category = 'Options'
+      AutoCheck = True
+      Caption = 'Générer et afficher la liste de toutes les solutions'
+      Hint = 'Génère puis affiche ou non la liste de toutes les solutions après chaque coup'
+      OnExecute = ActionOptionsListeToutesSolutionsExecute
+    end
+    object ActionOptionsJournalRecherche: TAction
+      Category = 'Options'
+      AutoCheck = True
+      Caption = 'Journal de recherche des solutions'
+      Hint = 'Démarre/Termine la trace du moteur de recherche des solutions'
+      OnExecute = ActionOptionsJournalRechercheExecute
+      ShortCut = 16458
+    end
+    object ActionOptionsTempsLimite: TAction
+      Category = 'Options'
+      AutoCheck = True
+      Caption = 'Temps limité'
+      Checked = True
+      Hint = 'Active/Désactive la limitation du temps de réflexion'
+      OnExecute = ActionVideExecute
+      ShortCut = 16460
+    end
+    object ActionOptionsSanctions: TAction
+      Category = 'Options'
+      AutoCheck = True
+      Caption = 'Propositions invalides sanctionnées'
+      Checked = True
+      Hint = 'Active/Désactive les sanctions pour proposition non valide (zéro point)'
+      OnExecute = ActionVideExecute
+      ShortCut = 16467
+    end
+    object ActionOptionsEnregistrer: TAction
+      Category = 'Options'
+      Caption = 'Enregistrer les paramètres'
+      Hint = 'Mémorise les paramètres pour le prochain démarrage'
+      OnExecute = ActionOptionsEnregistrerExecute
+      ShortCut = 16473
+    end
+    object ActionOptionsEnregistrerEnQuittant: TAction
+      Category = 'Options'
+      AutoCheck = True
+      Caption = 'Enregistrer les paramètres en quittant'
+      Checked = True
+      Hint = 'Enregistre automatiquement ou non les paramètres en quittant'
+      OnExecute = ActionVideExecute
+      ShortCut = 24641
+    end
+    object ActionOptionsReinitialiser: TAction
+      Category = 'Options'
+      Caption = 'Rétablir les paramètres par défaut'
+      Hint = 'Rétablit les paramètres par défaut de règles et d''affichage'
+      OnExecute = ActionOptionsReinitialiserExecute
+      ShortCut = 16474
+    end
+    object ActionOptionsGenererAutoFDM: TAction
+      Category = 'Options'
+      AutoCheck = True
+      Caption = 'Générer automatiquement la feuille de match HTML'
+      Checked = True
+      Hint = 'Génère ou non, après chaque coup, la feuille de match HTML'
+      OnExecute = ActionVideExecute
+    end
+    object ActionOptionsViderListePartiesJouees: TAction
+      Category = 'Options'
+      Caption = 'Vider la liste des parties jouées'
+      Hint = 'Vide la liste des parties jouées du menu Affichage'
+      OnExecute = ActionOptionsViderListePartiesJoueesExecute
+      ShortCut = 16470
+    end
+    object ActionOptionsEnregistrerPartieAuto: TAction
+      Category = 'Options'
+      AutoCheck = True
+      Caption = 'Enregistrer automatiquement la partie'
+      Checked = True
+      Hint = 'Enregistre automatiquement ou non la partie après chaque coup joué'
+      OnExecute = ActionVideExecute
+      ShortCut = 16449
+    end
+    object ActionOptionsPlacerPropositionAuto: TAction
+      Category = 'Options'
+      AutoCheck = True
+      Caption = 'Placer automatiquement la proposition'
+      Hint = 'Place automatiquement la proposition au lieu de la meilleure solution'
+      OnExecute = ActionVideExecute
+    end
+    object ActionOptionsReinitialiserRecords: TAction
+      Category = 'Options'
+      Caption = 'Réinitialiser les records'
+      Hint = 'Réinitialise tous les records'
+      OnExecute = ActionOptionsReinitialiserRecordsExecute
+      ShortCut = 24666
+    end
+    object ActionOptionsAppliquer: TAction
+      Category = 'Options'
+      Caption = 'Rétablir les paramètres enregistrés'
+      Hint = 'Rétablit les derniers paramètres enregistrés'
+      OnExecute = ActionOptionsAppliquerExecute
+      ShortCut = 24665
+    end
+    object ActionOptionsQualitePose: TAction
+      Category = 'Options'
+      Caption = 'Qualité des solutions pour le choix de la pose...'
+      Hint = 'Paramètres de la qualité de la liste de choix de la pose'
+      OnExecute = ActionOptionsQualitePoseExecute
+      ShortCut = 16465
+    end
+    object ActionOptionsTypePartieBlitz: TAction
+      Tag = 1
+      Category = 'Options'
+      Caption = 'Blitz (&1 minute)'
+      GroupIndex = 2
+      Hint = 'Durée d''une partie Blitz'
+      OnExecute = ActionOptionsTypePartieDureeExecute
+      ShortCut = 16433
+    end
+    object ActionOptionsTypePartieSemiRapide: TAction
+      Tag = 2
+      Category = 'Options'
+      Caption = 'Semi-rapide (&2 minutes)'
+      GroupIndex = 2
+      Hint = 'Durée d''une partie semi-rapide'
+      OnExecute = ActionOptionsTypePartieDureeExecute
+      ShortCut = 16434
+    end
+    object ActionOptionsTypePartieNormale: TAction
+      Tag = 3
+      Category = 'Options'
+      Caption = 'Normale (&3 minutes)'
+      GroupIndex = 2
+      Hint = 'Durée d''une partie normale'
+      OnExecute = ActionOptionsTypePartieDureeExecute
+      ShortCut = 16435
+    end
+    object ActionOptionsTypePartieStandard: TAction
+      Tag = 1
+      Category = 'Options'
+      Caption = 'Standard'
+      GroupIndex = 4
+      Hint = 'Active/Désactive le type de partie "Standard"'
+      OnExecute = ActionOptionsTypePartieTirageExecute
+      ShortCut = 16432
+    end
+    object ActionOptionsTypePartieJoker: TAction
+      Tag = 2
+      Category = 'Options'
+      Caption = 'Jo&ker'
+      GroupIndex = 4
+      Hint = 'Active/Désactive le type de partie "Joker"'
+      OnExecute = ActionOptionsTypePartieTirageExecute
+      ShortCut = 16459
+    end
+    object ActionPartieNouvelle: TAction
+      Category = 'Partie'
+      Caption = '&Nouvelle'
+      Hint = 'Commence une nouvelle partie'
+      OnExecute = ActionPartieNouvelleExecute
+      ShortCut = 16462
+    end
+    object ActionPartieOuvrir: TAction
+      Category = 'Partie'
+      Caption = '&Ouvrir...'
+      Hint = 'Ouvre une partie sauvegardée'
+      OnExecute = ActionPartieOuvrirExecute
+      ShortCut = 16463
+    end
+    object ActionPartieEnregistrerSous: TAction
+      Category = 'Partie'
+      Caption = 'Enregistrer &sous...'
+      Hint = 'Enregistre la partie en cours sous un autre nom'
+      OnExecute = ActionPartieEnregistrerSousExecute
+      ShortCut = 24645
+    end
+    object ActionPartieEnregistrer: TAction
+      Category = 'Partie'
+      Caption = '&Enregistrer'
+      Hint = 'Enregistre la partie en cours'
+      OnExecute = ActionPartieEnregistrerExecute
+      ShortCut = 16453
+    end
+    object ActionPartieQuitter: TAction
+      Category = 'Partie'
+      Caption = '&Quitter'
+      Hint = 'Quitte Duplicata'
+      OnExecute = ActionPartieQuitterExecute
+    end
+    object ActionPartieDemonstration: TAction
+      Category = 'Partie'
+      Caption = '&Démonstration'
+      Hint = 'L''ordinateur joue tout seul sans intervention de votre part'
+      OnExecute = ActionPartieDemonstrationExecute
+      ShortCut = 123
+    end
+    object ActionPlacementHorizontal: TAction
+      Tag = 1
+      Category = 'Placement'
+      Caption = 'Placer &Horizontalement'
+      Hint = 'Place horizontalement les jetons sélectionnés du chevalet'
+      ImageIndex = 0
+      OnExecute = ActionPlacementExecute
+    end
+    object ActionPlacementVertical: TAction
+      Tag = 2
+      Category = 'Placement'
+      Caption = 'Placer &Verticalement'
+      Hint = 'Place verticalement les jetons sélectionnés du chevalet'
+      ImageIndex = 1
+      OnExecute = ActionPlacementExecute
+    end
+    object ActionTestPlacementHorizontal: TAction
+      Tag = 3
+      Category = 'Placement'
+      Caption = 'Tester &Horizontalement'
+      Hint = 'Teste le placement horizontal des jetons sélectionnés'
+      ImageIndex = 0
+      OnExecute = ActionPlacementExecute
+    end
+    object ActionTestPlacementVertical: TAction
+      Tag = 4
+      Category = 'Placement'
+      Caption = 'Tester &Verticalement'
+      Hint = 'Teste le placement vertical des jetons sélectionnés'
+      ImageIndex = 1
+      OnExecute = ActionPlacementExecute
+    end
+  end
+  object ImageListActions: TImageList
+    left = 16
+    top = 56
+    Bitmap = {
+      4C69020000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000808080FF808080FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000808080FF808080FF808080FF0000
+      00000000000000000000000000000000000000000000808080FF808080FF8080
+      80FF808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+      80FF0000000000000000000000000000000000000000808080FF808080FF8080
+      80FF808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+      80FF808080FF00000000000000000000000000000000808080FF808080FF8080
+      80FF808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+      80FF808080FFC0C0C0FF000000000000000000000000808080FF808080FF8080
+      80FF808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+      80FFC0C0C0FFC0C0C0FF00000000000000000000000000000000C0C0C0FFC0C0
+      C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FF808080FF808080FF808080FFC0C0
+      C0FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000808080FF808080FFC0C0C0FFC0C0
+      C0FF000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000808080FFC0C0C0FFC0C0C0FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000C0C0C0FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000808080FF808080FF808080FF808080FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000808080FF808080FF808080FF808080FFC0C0C0FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000808080FF808080FF808080FF808080FFC0C0C0FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000808080FF808080FF808080FF808080FFC0C0C0FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000808080FF808080FF808080FF808080FFC0C0C0FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000808080FF808080FF808080FF808080FFC0C0C0FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000808080FF808080FF808080FF808080FFC0C0C0FF000000000000
+      0000000000000000000000000000000000000000000000000000808080FF8080
+      80FF808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+      80FF000000000000000000000000000000000000000000000000000000008080
+      80FF808080FF808080FF808080FF808080FF808080FF808080FF808080FFC0C0
+      C0FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+      0000808080FF808080FF808080FF808080FF808080FF808080FFC0C0C0FFC0C0
+      C0FF000000000000000000000000000000000000000000000000000000000000
+      000000000000808080FF808080FF808080FF808080FFC0C0C0FFC0C0C0FF0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000808080FF808080FFC0C0C0FFC0C0C0FF000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000C0C0C0FFC0C0C0FF00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000
+    }
+  end
+  object PopupMenuPlacement: TPopupMenu
+    Images = ImageListActions
+    left = 48
+    top = 56
+    object MenuItemPlacementGaucheDroite: TMenuItem
+      Action = ActionPlacementHorizontal
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000C0C0C0FF0000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FFC0C0C0FFC0C0C0FF00000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FF808080FFC0C0C0FFC0C0C0FF000000000000000000000000000000000000
+        000000000000C0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FF8080
+        80FF808080FF808080FFC0C0C0FFC0C0C0FF0000000000000000000000000000
+        0000808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FFC0C0C0FFC0C0C0FF00000000000000000000
+        0000808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FF808080FFC0C0C0FF00000000000000000000
+        0000808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FF808080FF0000000000000000000000000000
+        0000808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FF000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FF808080FF808080FF00000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FF808080FF0000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FF000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+    end
+    object MenuITemPlacementHautBas: TMenuItem
+      Action = ActionPlacementVertical
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000C0C0C0FFC0C0
+        C0FF000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000808080FF808080FFC0C0
+        C0FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FFC0C0C0FF00000000000000000000000000000000000000000000
+        0000000000000000000000000000808080FF808080FF808080FF808080FF8080
+        80FF808080FFC0C0C0FFC0C0C0FF000000000000000000000000000000000000
+        00000000000000000000808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FFC0C0C0FFC0C0C0FF0000000000000000000000000000
+        000000000000808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FF000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FF000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+    end
+  end
+  object PopupMenuTestPlacement: TPopupMenu
+    Images = ImageListActions
+    left = 48
+    top = 104
+    object MenuItemTestPlacementHorizontal: TMenuItem
+      Action = ActionTestPlacementHorizontal
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000C0C0C0FF0000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FFC0C0C0FFC0C0C0FF00000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FF808080FFC0C0C0FFC0C0C0FF000000000000000000000000000000000000
+        000000000000C0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FFC0C0C0FF8080
+        80FF808080FF808080FFC0C0C0FFC0C0C0FF0000000000000000000000000000
+        0000808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FFC0C0C0FFC0C0C0FF00000000000000000000
+        0000808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FF808080FFC0C0C0FF00000000000000000000
+        0000808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FF808080FF0000000000000000000000000000
+        0000808080FF808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FF000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FF808080FF808080FF00000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FF808080FF0000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000008080
+        80FF000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+    end
+    object MenuItemTestPlacementVertical: TMenuItem
+      Action = ActionTestPlacementVertical
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000C0C0C0FFC0C0
+        C0FF000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000808080FF808080FFC0C0
+        C0FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FFC0C0C0FF00000000000000000000000000000000000000000000
+        0000000000000000000000000000808080FF808080FF808080FF808080FF8080
+        80FF808080FFC0C0C0FFC0C0C0FF000000000000000000000000000000000000
+        00000000000000000000808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FFC0C0C0FFC0C0C0FF0000000000000000000000000000
+        000000000000808080FF808080FF808080FF808080FF808080FF808080FF8080
+        80FF808080FF808080FF808080FF000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FFC0C0C0FF0000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000000808080FF808080FF808080FF8080
+        80FF000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000
+      }
+    end
+  end
+  object TimerMelangeur: TTimer
+    Enabled = False
+    Interval = 1
+    OnTimer = TimerMelangeurTimer
+    left = 80
+    top = 8
+  end
+  object TimerDicoOK: TTimer
+    OnTimer = TimerDicoOKTimer
+    left = 80
+    top = 56
+  end
+  object TimerReflexion: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = TimerReflexionTimer
+    left = 80
+    top = 104
+  end
+  object TimerDemonstration: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = TimerDemonstrationTimer
+    left = 80
+    top = 152
+  end
+  object TimerAPropos: TTimer
+    OnTimer = TimerAProposTimer
+    left = 80
+    top = 200
+  end
+  object OpenDialog: TOpenDialog
+    OnShow = OpenDialogShow
+    Title = 'Sélectionner le fichier de partie Duplicata sauvegardée'
+    DefaultExt = '.dup'
+    Filter = 'Partie Duplicata (*.dup)|*.dup'
+    Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing]
+    left = 112
+    top = 8
+  end
+  object SaveDialog: TSaveDialog
+    OnShow = SaveDialogShow
+    Title = 'Spécifiez le chemin et le nom de partie sauvegardée'
+    DefaultExt = '.dup'
+    Filter = 'Partie Duplicata (*.dup)|*.dup'
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofEnableSizing]
+    left = 144
+    top = 8
+  end
+end

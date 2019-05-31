@@ -1,0 +1,48 @@
+object FormNvRecord: TFormNvRecord
+  Left = 65
+  Height = 240
+  Top = 27
+  Width = 320
+  BorderStyle = bsNone
+  Caption = 'Nouveau record'
+  ClientHeight = 240
+  ClientWidth = 320
+  Color = clWhite
+  Constraints.MinHeight = 52
+  Constraints.MinWidth = 136
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  FormStyle = fsStayOnTop
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.6.2.0'
+  object PaintBox: TPaintBox
+    Left = 0
+    Height = 214
+    Top = 26
+    Width = 320
+    Align = alClient
+    OnPaint = PaintBoxPaint
+  end
+  object Panel: TPanel
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 320
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Nouveau(x) record(s)'
+    Font.Color = clRed
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Timer: TTimer
+    Enabled = False
+    Interval = 500
+    OnTimer = TimerTimer
+  end
+end
