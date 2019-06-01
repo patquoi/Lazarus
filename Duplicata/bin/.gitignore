@@ -1,4 +1,5 @@
-Duplicata
-Duplicata.html
-Records.html
-Duplicata.ini
+/Duplicata
+/*.html
+/*.ini
+/*.log
+/listemots.txt

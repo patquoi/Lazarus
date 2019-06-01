@@ -4,7 +4,6 @@ thumbs.db
 *.dcu
 *.exe
 *.rsm
-*.log
 *.bak
 *.old
 *.zip
@@ -13,7 +12,6 @@ thumbs.db
 *.tar.gz
 *.stat
 *.lps
-listemots.txt
 obj/
 dcu/
 img/

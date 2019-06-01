@@ -1,0 +1,282 @@
+--------------------------------------------------------------------------------
+NEOE EI=> EEEINO
+A1: Libre
+B1: Libre
+C1: Libre
+D1: Libre
+E1: Libre
+F1: Libre
+G1: Libre
+H1: Libre
+I1: Libre
+J1: Libre
+K1: Libre
+L1: Libre
+M1: Libre
+N1: Libre
+O1: Libre
+A2: Libre
+B2: Libre
+C2: Libre
+D2: Libre
+E2: Libre
+F2: Libre
+G2: Libre
+H2: Libre
+  Horizontalement: Pose possible (2~7 jetons)
+    *1,2,
+      AE=>AE
+      BE=>BE
+        BE: OK
+          bE => POSE VALIDE rapportant 1 points !
+      CE=>CE
+        CE: OK
+          cE => POSE VALIDE rapportant 1 points !
+      DE=>DE
+        DE: OK
+          dE => POSE VALIDE rapportant 1 points !
+      EE=>EE
+      FE=>EF
+      GE=>EG
+      HE=>EH
+        EH: OK
+          Eh => POSE VALIDE rapportant 1 points !
+        HE: OK
+          hE => POSE VALIDE rapportant 1 points !
+      IE=>EI
+      JE=>EJ
+        JE: OK
+          jE => POSE VALIDE rapportant 1 points !
+      KE=>EK
+      LE=>EL
+        LE: OK
+          lE => POSE VALIDE rapportant 1 points !
+      ME=>EM
+        ME: OK
+          mE => POSE VALIDE rapportant 1 points !
+      NE=>EN
+        EN: OK
+          EN => POSE VALIDE rapportant 2 points !
+          En => POSE VALIDE rapportant 1 points !
+        NE: OK
+          NE => POSE VALIDE rapportant 2 points !
+      OE=>EO
+      PE=>EP
+      QE=>EQ
+      RE=>ER
+        RE: OK
+          rE => POSE VALIDE rapportant 1 points !
+      SE=>ES
+        ES: OK
+          Es => POSE VALIDE rapportant 1 points !
+        SE: OK
+          sE => POSE VALIDE rapportant 1 points !
+      TE=>ET
+        ET: OK
+          Et => POSE VALIDE rapportant 1 points !
+        TE: OK
+          tE => POSE VALIDE rapportant 1 points !
+      UE=>EU
+        EU: OK
+          Eu => POSE VALIDE rapportant 1 points !
+      VE=>EV
+        VE: OK
+          vE => POSE VALIDE rapportant 1 points !
+      WE=>EW
+      XE=>EX
+        EX: OK
+          Ex => POSE VALIDE rapportant 1 points !
+      YE=>EY
+      ZE=>EZ
+    *1,5,
+      AI=>AI
+        AI: OK
+          aI => POSE VALIDE rapportant 1 points !
+      BI=>BI
+        BI: OK
+          bI => POSE VALIDE rapportant 1 points !
+      CI=>CI
+        CI: OK
+          cI => POSE VALIDE rapportant 1 points !
+      DI=>DI
+      EI=>EI
+      FI=>FI
+        FI: OK
+          fI => POSE VALIDE rapportant 1 points !
+        IF: OK
+          If => POSE VALIDE rapportant 1 points !
+      GI=>GI
+      HI=>HI
+        HI: OK
+          hI => POSE VALIDE rapportant 1 points !
+      II=>II
+      JI=>IJ
+      KI=>IK
+      LI=>IL
+        IL: OK
+          Il => POSE VALIDE rapportant 1 points !
+        LI: OK
+          lI => POSE VALIDE rapportant 1 points !
+      MI=>IM
+        MI: OK
+          mI => POSE VALIDE rapportant 1 points !
+      NI=>IN
+        IN: OK
+          IN => POSE VALIDE rapportant 2 points !
+          In => POSE VALIDE rapportant 1 points !
+        NI: OK
+          NI => POSE VALIDE rapportant 2 points !
+      OI=>IO
+      PI=>IP
+        PI: OK
+          pI => POSE VALIDE rapportant 1 points !
+      QI=>IQ
+      RI=>IR
+        RI: OK
+          rI => POSE VALIDE rapportant 1 points !
+      SI=>IS
+        SI: OK
+          sI => POSE VALIDE rapportant 1 points !
+      TI=>IT
+      UI=>IU
+      VI=>IV
+      WI=>IW
+      XI=>IX
+        XI: OK
+          xI => POSE VALIDE rapportant 1 points !
+      YI=>IY
+      ZI=>IZ
+    *1,6,
+      AN=>AN
+        AN: OK
+          aN => POSE VALIDE rapportant 1 points !
+        NA: OK
+          Na => POSE VALIDE rapportant 1 points !
+      BN=>BN
+      CN=>CN
+      DN=>DN
+      EN=>EN
+        EN: OK
+          EN => POSE VALIDE rapportant 2 points !
+        NE: OK
+          NE => POSE VALIDE rapportant 2 points !
+          Ne => POSE VALIDE rapportant 1 points !
+      FN=>FN
+      GN=>GN
+      HN=>HN
+      IN=>IN
+        IN: OK
+          iN => POSE VALIDE rapportant 1 points !
+        NI: OK
+          Ni => POSE VALIDE rapportant 1 points !
+          NI => POSE VALIDE rapportant 2 points !
+      JN=>JN
+      KN=>KN
+      LN=>LN
+      MN=>MN
+      NN=>NN
+      ON=>NO
+        NO: OK
+          NO => POSE VALIDE rapportant 2 points !
+          No => POSE VALIDE rapportant 1 points !
+        ON: OK
+          ON => POSE VALIDE rapportant 2 points !
+      PN=>NP
+      QN=>NQ
+      RN=>NR
+      SN=>NS
+      TN=>NT
+      UN=>NU
+        NU: OK
+          Nu => POSE VALIDE rapportant 1 points !
+        UN: OK
+          uN => POSE VALIDE rapportant 1 points !
+      VN=>NV
+      WN=>NW
+      XN=>NX
+      YN=>NY
+      ZN=>NZ
+    *1,7,
+      AO=>AO
+      BO=>BO
+      CO=>CO
+        OC: OK
+          Oc => POSE VALIDE rapportant 1 points !
+      DO=>DO
+        DO: OK
+          dO => POSE VALIDE rapportant 1 points !
+      EO=>EO
+      FO=>FO
+      GO=>GO
+        GO: OK
+          gO => POSE VALIDE rapportant 1 points !
+      HO=>HO
+        HO: OK
+          hO => POSE VALIDE rapportant 1 points !
+        OH: OK
+          Oh => POSE VALIDE rapportant 1 points !
+      IO=>IO
+      JO=>JO
+      KO=>KO
+      LO=>LO
+      MO=>MO
+        OM: OK
+          Om => POSE VALIDE rapportant 1 points !
+      NO=>NO
+        NO: OK
+          NO => POSE VALIDE rapportant 2 points !
+        ON: OK
+          ON => POSE VALIDE rapportant 2 points !
+          On => POSE VALIDE rapportant 1 points !
+      OO=>OO
+      PO=>OP
+      QO=>OQ
+      RO=>OR
+        OR: OK
+          Or => POSE VALIDE rapportant 1 points !
+      SO=>OS
+        OS: OK
+          Os => POSE VALIDE rapportant 1 points !
+      TO=>OT
+        TO: OK
+          tO => POSE VALIDE rapportant 1 points !
+      UO=>OU
+        OU: OK
+          Ou => POSE VALIDE rapportant 1 points !
+      VO=>OV
+      WO=>OW
+      XO=>OX
+      YO=>OY
+      ZO=>OZ
+    2,3,
+      EE=>EE
+    2,5,
+      EI=>EI
+    2,6,
+      EN=>EN
+        EN: OK
+          EN => POSE VALIDE rapportant 2 points !
+        NE: OK
+          NE => POSE VALIDE rapportant 2 points !
+    2,7,
+      EO=>EO
+    5,6,
+      IN=>IN
+        IN: OK
+          IN => POSE VALIDE rapportant 2 points !
+        NI: OK
+          NI => POSE VALIDE rapportant 2 points !
+    5,7,
+      IO=>IO
+    6,7,
+      NO=>NO
+        NO: OK
+          NO => POSE VALIDE rapportant 2 points !
+        ON: OK
+          ON => POSE VALIDE rapportant 2 points !
+    *1,2,3,
+      AEE=>AEE
+      BEE=>BEE
+        BEE: OK
+          bEE => POSE VALIDE rapportant 3 points !
+
