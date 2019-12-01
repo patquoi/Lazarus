@@ -20,7 +20,7 @@ Cependant, une résolution de 1024x768 est fortement recommandée.
 CONTENU
 
 Duplicata est fourni :
- - avec l'ODS 7ème édition (2016) comme dictionnaire de référence,
+ - avec l'ODS 8ème édition (2020) comme dictionnaire de référence,
  - avec les sources du programme (Duplicata/src).
 
 DESINSTALLATION
@@ -72,6 +72,9 @@ procédez comme suit :
    type "file:///[...]/Duplicata/bin/html/" (sans les guillemets). 
 
 HISTORIQUE DES VERSIONS
+
+Version 1.9 - 01/12/2019
+   Le dictionnaire de référence est l'ODS8 (8661 mots ajoutés et 6 retirés).
 
 Version 1.8.10 - 27/06/2019
  - Les lettres en minuscules dans le résultat de recherche de mots ne 
@@ -812,4 +815,4 @@ avec en plus des statistiques sur les initiales et les finales.
 
 ______________________________________
 
-Dernière mise à jour le 27 juin 2019.
+Dernière mise à jour le 1er décembre 2019.
