@@ -2248,8 +2248,8 @@ end;
 //---------------------------------------------------------------------------
 procedure TFormMain.DetermineVersion;
 begin // vLaz : Temporairement, la version complète se trouve uniquement ici.
-stVersion:=Format('%d.%d.%d', [1,8,10]);
-stSousVersion:=Format('.%d', [2]);
+stVersion:=Format('%d.%d.%d', [1,9,0]);
+stSousVersion:=Format('.%d', [3]);
 end;
 //-----------------------------------------------------------------------------
 procedure TFormMain.DefinitDimensionsParDefaut(var FormMainClientWidth, FormMainClientHeight : Integer);
