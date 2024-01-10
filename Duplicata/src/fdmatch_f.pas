@@ -244,7 +244,7 @@ iDebutDrnLigne:=Length(RichMemo.Lines.Text); // v1.5
   // v1.8.3 : plus qu'une seule version de feuille de match. Parties antérieures à v1.4 non supportées
 RichMemo.Lines.Add(Format(stFormatLigne, [p.Tour,
                                           stTirage,
-                                          p.stCoordonnees(XPrp, YPrp, dPrp),
+                                          IfThen(stMotPrp='','',p.stCoordonnees(XPrp, YPrp, dPrp)), // v1.10.1 : on n'affiche pas de position de proposition en mode démo
                                           stMotPrp,
                                           p.stCoordonnees(XSol, YSol, dSol),
                                           stMotSol,
