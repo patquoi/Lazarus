@@ -1471,7 +1471,7 @@ if ReflexionEnCours and ChoixPoseClavierEnCours then
       end
     end;
   if (Key>='0') and (Key<='9') then
-    if (Choix1Colonne=1) and (Key>='1') and (Key<='5') then
+    if (Choix1Colonne=1) and (Key>='0') and (Key<='5') then // v1.10.1 : Key>='0' au lieu de Key>='1' pour permettre de choisir la colonne 10 !
       Choix1Colonne:=10+Ord(Key)-Ord('0')
     else
       Choix1Colonne:=Ord(Key)-Ord('0');
