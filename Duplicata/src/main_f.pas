@@ -959,7 +959,10 @@ var i, j, // v1.4.4
 
 begin
 // v1.5.2 : inclut le test de placement (Tag>2 de PopuMenuTestPlacement)
-ChoixDirection:=TDirection(1+((Sender as TAction).Tag-1) mod 2); // Le tag des actions donne la direction. 0=Passer son tour
+// v1.10.2 : exclusion du cas "Passer son tour"
+ChoixDirection:=dIndefinie;
+if (Sender as TAction).Tag>0 then 
+  ChoixDirection:=TDirection(1+((Sender as TAction).Tag-1) mod 2); // Le tag des actions donne la direction. 0=Passer son tour
 TestPlacement:=((Sender as TAction).Tag>2); // v1.5.2
 if ReflexionEnCours and
   (ChoixDirection>dIndefinie) then
@@ -2248,7 +2251,7 @@ end;
 //---------------------------------------------------------------------------
 procedure TFormMain.DetermineVersion;
 begin // vLaz : Temporairement, la version complète se trouve uniquement ici.
-stVersion:=Format('%d.%d.%d', [1,10,1]);
+stVersion:=Format('%d.%d.%d', [1,10,2]);
 stSousVersion:=Format('.%d', [0]);
 end;
 //-----------------------------------------------------------------------------
