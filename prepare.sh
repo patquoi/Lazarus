@@ -4,6 +4,7 @@ rm Duplicata/obj/*.*
 rm Duplicata/src/*.stat
 rm Duplicata/src/*.lps
 rm Duplicata/bin/listemots.txt
+rm Duplicata/bin/Records.html
 mkdir backup
 mv Duplicata/bin/*.html backup
 mv Duplicata/bin/*.ini backup
